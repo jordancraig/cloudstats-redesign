@@ -1,0 +1,63 @@
+<import: src="./home">
+
+<!--
+  Derby templates are similar to Handlebars, except that they are first
+  parsed as HTML, and there are a few extensions to make them work directly
+  with models. A single HTML template defines the HTML output, the event
+  handlers that update the model after user interaction, and the event handlers
+  that update the DOM when the model changes.
+
+  As in Handlebars, double curly braces output a value literally. Derby
+  templates add single curly braces, which output a value and set up
+  model <- -> view bindings for that object.
+
+  Elements that end in colon define template names. Pre-defined templates
+  are capitalized by convention, but template names are case-insensitive.
+  Pre-defined templates are automatically included when the page is rendered.
+-->
+<Header:>
+  <body>
+  <ui:connectionAlert>
+        <ul id="gn-menu" class="gn-menu-main">
+        <li class="gn-trigger">
+          <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+          <nav class="gn-menu-wrapper">
+            <div class="gn-scroller">
+              <ul class="gn-menu">
+                <li class="gn-search-item">
+                  <input placeholder="Search" type="search" class="gn-search">
+                  <a class="gn-icon gn-icon-search"><span>Search</span></a>
+                </li>
+                <li>
+                  <a class="gn-icon gn-icon-download">Downloads</a>
+                  <ul class="gn-submenu">
+                    <li><a class="gn-icon gn-icon-illustrator">Vector Illustrations</a></li>
+                    <li><a class="gn-icon gn-icon-photoshop">Photoshop files</a></li>
+                  </ul>
+                </li>
+                <li><a class="gn-icon gn-icon-cog">Settings</a></li>
+                <li><a class="gn-icon gn-icon-help">Help</a></li>
+                <li>
+                  <a class="gn-icon gn-icon-archive">Archives</a>
+                  <ul class="gn-submenu">
+                    <li><a class="gn-icon gn-icon-article">Articles</a></li>
+                    <li><a class="gn-icon gn-icon-pictures">Images</a></li>
+                    <li><a class="gn-icon gn-icon-videos">Videos</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /gn-scroller -->
+          </nav>
+        </li>
+        <li><a href="http://localhost:3000">CloudStats</a></li>
+        <li><a class="codrops-icon codrops-icon-drop" href=""><span>Login</span></a></li>
+      </ul>
+
+<Scripts:>
+  <script src="../js/classie.js"></script>
+  <script src="../js/gnmenu.js"></script>
+  <script src="../js/modernizr.custom.js"></script>
+  <script>
+    new gnMenu( document.getElementById( 'gn-menu' ) );
+  </script>
+</html>
